@@ -3,7 +3,7 @@ const World= Matter.World;
 const Bodies = Matter.Bodies;
 
 var engine, world;
-var box1,box2,ground,pig1,pig2,log1,box3,box4,log2,box5,log3,log4,bg;
+var box1,box2,ground,pig1,pig2,log1,box3,box4,log2,box5,log3,log4,bg,platform;
 
 function preload(){
 
@@ -18,7 +18,8 @@ function setup(){
     box1 = new Box(750,320,70,70);
     box2 = new Box(950,320,70,70);
 
-    ground = new Ground(600,height,1200,40);
+    ground = new Ground(600,height-20,1200,40);
+    platform = new Ground(150,450,300,220);
     pig1 = new Pig(850,320);
     log1 = new Log(850,270, 275, PI/2)
 
@@ -40,6 +41,7 @@ function draw(){
     box1.display();
     box2.display();
     ground.display();
+    platform.display();
     pig1.display();
     log1.display();
 
