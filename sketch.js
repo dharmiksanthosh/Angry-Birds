@@ -34,9 +34,9 @@ function setup(){
 
     bird = new Bird(200,100);
 
-    log5 = new Log(200,100,100,PI/2);
+    // log5 = new Log(200,100,100,PI/2);
 
-    chain1 = new Chain(bird.body,log5.body);
+    chain1 = new Chain(bird.body,{x:200,y:100});
 }
 
 function draw(){
@@ -60,7 +60,15 @@ function draw(){
 
     bird.display();
 
-    log5.display();
+    // log5.display();
 
     chain1.display();
 }
+function mouseDragged(){
+
+    Matter.Body.setPosition(bird.body,{x:mouseX,y:mouseY});
+}
+function mouseReleased(){
+
+    chain1.fly();
+}  
